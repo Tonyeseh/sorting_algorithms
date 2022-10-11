@@ -43,5 +43,6 @@ void shell_sort(int *array, size_t size)
 		}
 		/* add print_array(array, size) after the gap line*/
 		gap = gap / 3;
+		print_array(array, size);
 	}
 }
