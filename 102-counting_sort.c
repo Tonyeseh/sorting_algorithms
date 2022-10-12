@@ -7,13 +7,14 @@
  * @array: array
  * @size: size of array
  *
- * Returns: The largest number
+ * Return: The largest number
  */
 
 int max_element(int *array, size_t size)
 {
 	size_t i;
 	int max_ele = array[0];
+
 	for (i = 1; i < size; i++)
 	{
 		if (max_ele < array[i])
@@ -36,6 +37,7 @@ int *create_array(size_t size)
 {
 	size_t i;
 	int *new_array = NULL;
+
 	if (size > 0)
 	{
 		new_array = malloc(sizeof(int) * size);
@@ -47,7 +49,8 @@ int *create_array(size_t size)
 
 
 /**
- * counting_sort - sorts an array of integers in ascending order using Counting sort algorithm
+ * counting_sort - sorts an array of integers in ascending order
+ *			using Counting sort algorithm
  *
  * @array: array to be sorted
  * @size: size of array
