@@ -1,7 +1,8 @@
 #include "sort.h"
 
 /**
- * sheel_sort - sorts an array of integers in ascending order using the Shell sort algorithm, using the Knuth sequence
+ * shell_sort - sorts an array of integers in ascending order using the
+ *		Shell sort algorithm, using the Knuth sequence
  *
  * @array: array to be sorted
  * @size: size of array
