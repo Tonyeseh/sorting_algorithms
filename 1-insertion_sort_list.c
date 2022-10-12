@@ -11,8 +11,12 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp, *curr = (*list)->next, *next, *prev = NULL;
+	listint_t *tmp, *curr, *next, *prev = NULL;
 
+	if (!list || !(*list))
+		return;
+
+	curr = (*list)->next;
 	while (curr)
 	{
 		next = curr->next;
@@ -31,7 +35,7 @@ void insertion_sort_list(listint_t **list)
 			if (tmp)
 				tmp->next = curr;
 			curr->prev = tmp;
-			print_array(array, size);
+			print_list(*list);
 		}
 		curr = next;
 	}
