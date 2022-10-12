@@ -13,6 +13,7 @@
 void swap_nodes(listint_t **list, listint_t *n1, listint_t *n2)
 {
 	listint_t *tmp;
+
 	if (!n2->prev)
 		*list = n1;
 	tmp = n1->next;
@@ -28,11 +29,23 @@ void swap_nodes(listint_t **list, listint_t *n1, listint_t *n2)
 	print_list(*list);
 }
 
+
+/**
+ * cocktail_sort_list - sorts a doubly linked list of integer in
+ *			ascending order using Cocktail shaker sort algorithm.
+ *
+ * @list: pointer to head of list
+ *
+ * Return: Nothing
+ */
 void cocktail_sort_list(listint_t **list)
 {
 	int internal_swap, swap = 1;
-	listint_t *current_node, *next_node, *previous_node, *top_sorted = NULL, *bottom_sorted = NULL;
+	listint_t *current_node, *next_node, *previous_node;
+	listint_t *top_sorted = NULL, *bottom_sorted = NULL;
 
+	if (!list || !(*list))
+		return;
 	current_node = *list;
 	while (swap)
 	{
