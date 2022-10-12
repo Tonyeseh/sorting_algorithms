@@ -69,7 +69,7 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 1; i < max_elem + 1; i++)
 		count[i] += count[i - 1];
-	/* add 'print_array(count, max_elem + 1);' in this line */
+	print_array(count, max_elem + 1);
 
 	for (i = (int)size - 1; i >= 0; i--)
 		new_array[--count[array[i]]] = array[i];
