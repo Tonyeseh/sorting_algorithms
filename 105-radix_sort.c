@@ -10,7 +10,7 @@
  *
  * Return: number of digits in the max value
  */
-int max_value_place(int * array, size_t size)
+int max_value_place(int *array, size_t size)
 {
 	int digit_num = 0;
 	size_t i = 1;
@@ -28,7 +28,7 @@ int max_value_place(int * array, size_t size)
 		max /= 10;
 		digit_num++;
 	}
-	return digit_num;
+	return (digit_num);
 }
 
 
@@ -44,13 +44,14 @@ int max_value_place(int * array, size_t size)
 int get_rem(int num, int place)
 {
 	int rem;
+
 	while (place)
 	{
 		rem = num % 10;
 		num /= 10;
 		place--;
 	}
-	return rem;
+	return (rem);
 }
 
 
@@ -65,16 +66,18 @@ int get_rem(int num, int place)
 int *create_array(size_t size)
 {
 	int *array = malloc(sizeof(int) * size);
+
 	if (array)
 		return (array);
 	else
-		return NULL;
+		return (NULL);
 }
 
 
 
 /**
- * radix_sort - sorts an array of integers in ascending order using the Radix sort algorithm.
+ * radix_sort - sorts an array of integers in ascending order
+ *		using the Radix sort algorithm.
  *
  *
  * Descriptions: Uses LSD radix sort algorithm
@@ -90,6 +93,8 @@ void radix_sort(int *array, size_t size)
 {
 	int i, *count, *new_array, num_of_digit, place;
 
+	if (!array || size < 2)
+		return;
 	place = 1;
 	count = create_array(10);
 	new_array = create_array(size);
