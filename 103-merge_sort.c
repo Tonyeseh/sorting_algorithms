@@ -65,9 +65,8 @@ void split_and_merge(int *array, int low, int high)
 	if (low < high)
 	{
 		mid = (low + high) / 2;
-		printf("mid - %d\n", mid);
-		split_and_merge(array, low, mid - 1);
-		split_and_merge(array, mid, high);
+		split_and_merge(array, low, mid);
+		split_and_merge(array, mid + 1, high);
 		merge(array, low, mid, high);
 	}
 }
