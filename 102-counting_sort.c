@@ -59,6 +59,8 @@ void counting_sort(int *array, size_t size)
 {
 	int *count, *new_array, max_elem, i;
 
+	if (!array || size < 2)
+		return;
 	max_elem = max_element(array, size);
 	count = create_array(max_elem + 1);
 	new_array = create_array(size);
