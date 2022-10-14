@@ -17,6 +17,7 @@ void merge(int *array, int low, int mid, int high)
 {
 	int i, j, k;
 	int *new_array = malloc(sizeof(int) * (high - low + 1));
+
 	if (!new_array)
 		return;
 
@@ -81,7 +82,8 @@ void split_and_merge(int *array, int low, int high)
 }
 
 /**
- * merge_sort - sorts an array of integers in ascending order using the Merge sort algorithm
+ * merge_sort - sorts an array of integers in ascending order
+ *		using the Merge sort algorithm
  *
  * @array: array to be sorted
  * @size: size of array
