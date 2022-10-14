@@ -65,9 +65,18 @@ void split_and_merge(int *array, int low, int high)
 	if (low < high)
 	{
 		mid = (low + high) / 2;
-		split_and_merge(array, low, mid);
-		split_and_merge(array, mid + 1, high);
-		merge(array, low, mid, high);
+		if (((low + high) % 2) == 0)
+		{
+			split_and_merge(array, low, mid - 1);
+			split_and_merge(array, mid, high);
+			merge(array, low, mid - 1, high);
+		}
+		else
+		{
+			split_and_merge(array, low, mid);
+			split_and_merge(array, mid + 1, high);
+			merge(array, low, mid, high);
+		}
 	}
 }
 
